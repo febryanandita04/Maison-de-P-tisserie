@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison de Pâtisserie | A Taste of Elegance</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream: #F8F3EB;
+  --white: #FFFCF7;
+  --brown: #493126;
+  --gold: #B39765;
+  --muted: #8A7A6D;
+  --line: #E8DED1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--white);
+  color: var(--brown);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.7;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.serif {
+  font-family: 'Playfair Display', serif;
+}
+
+.italic {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(42px, 7vw, 76px);
+}
+
+h2 {
+  font-size: clamp(30px, 4vw, 45px);
+}
+
+p {
+  color: var(--muted);
+}
+
+button, .button {
+  border: none;
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 14px 22px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  transition: .25s;
+  border: 1px solid var(--brown);
+}
+
+.button-dark {
+  background: var(--brown);
+  color: white;
+}
+
+.button-dark:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.button-outline {
+  background: transparent;
+  color: var(--brown);
+}
+
+.button-outline:hover {
+  background: var(--brown);
+  color: white;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  min-height: 78px;
+  padding: 15px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: rgba(255,252,247,.97);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.brand-icon {
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font: italic 26px 'Playfair Display', serif;
+  color: var(--gold);
+}
+
+.brand-name {
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.brand-name small {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+nav button {
+  background: none;
+  color: var(--brown);
+  font-size: 11px;
+  transition: .2s;
+}
+
+nav button:hover {
+  color: var(--gold);
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  font-size: 25px;
+  color: var(--brown);
+}
+
+.page {
+  display: none;
+  animation: fadeIn .35s ease;
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* BERANDA */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 6%;
+  padding: 65px 8%;
+  background: var(--cream);
+  min-height: 590px;
+}
+
+.hero-copy p.description {
+  max-width: 430px;
+  font-size: 13px;
+  margin: 22px 0 28px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero-image {
+  position: relative;
+}
+
+.hero-image img {
+  height: 450px;
+  object-fit: cover;
+}
+
+.image-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 15px 22px;
+  background: var(--white);
+}
+
+.image-label small {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--gold);
+}
+
+.image-label strong {
+  font: 23px 'Playfair Display', serif;
+}
+
+.section {
+  padding: 75px 8%;
+}
+
+.section-center {
+  text-align: center;
+}
+
+.intro-text {
+  max-width: 600px;
+  margin: 20px auto 0;
+  font-size: 13px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.text-button {
+  background: none;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 5px;
+  font-size: 11px;
+  color: var(--brown);
+}
+
+/* KATALOG */
+
+.catalog-section {
+  background: var(--cream);
+}
+
+.catalog-tools {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.catalog-tools input,
+.catalog-tools select {
+  padding: 12px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  color: var(--brown);
+  min-width: 0;
+}
+
+.catalog-tools input {
+  flex: 1;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 23px;
+}
+
+.product-card {
+  background: var(--white);
+  transition: .25s;
+  border: 1px solid transparent;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--line);
+  box-shadow: 0 10px 30px #4931260c;
+}
+
+.product-card img {
+  height: 230px;
+}
+
+.product-info {
+  padding: 20px;
+}
+
+.country {
+  color: var(--gold);
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.product-info h3 {
+  font-size: 24px;
+  margin: 7px 0;
+}
+
+.product-info p {
+  font-size: 12px;
+  min-height: 42px;
+}
+
+.product-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  margin-top: 17px;
+  padding-top: 13px;
+  gap: 8px;
+}
+
+.price {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.detail-button {
+  color: var(--gold);
+  background: transparent;
+  font-size: 12px;
+}
+
+.no-results {
+  padding: 25px;
+  text-align: center;
+}
+
+/* DETAIL KUE */
+
+.detail-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6%;
+  padding: 45px 8% 80px;
+  align-items: start;
+}
+
+.detail-layout > img {
+  height: 500px;
+}
+
+.detail-copy h1 {
+  font-size: clamp(38px, 5vw, 55px);
+  margin: 8px 0 20px;
+}
+
+.detail-copy > p {
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.detail-price {
+  padding: 18px 0;
+  margin-bottom: 20px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-size: 20px;
+}
+
+.fact-box {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.fact-box h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.fact-box p {
+  font-size: 12px;
+}
+
+.back-button {
+  margin: 35px 8% 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* JOURNAL */
+
+.journal-list {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px 25px 70px;
+}
+
+.journal-item {
+  display: grid;
+  grid-template-columns: 35% 1fr;
+  gap: 30px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.journal-item img {
+  height: 240px;
+}
+
+.journal-item h2 {
+  font-size: 29px;
+  margin: 10px 0;
+}
+
+.journal-item p {
+  font-size: 12px;
+  margin: 10px 0;
+}
+
+/* PEMESANAN */
+
+.form-container {
+  max-width: 650px;
+  padding: 35px 25px 75px;
+  margin: auto;
+}
+
+.form-container label {
+  display: block;
+  font-size: 12px;
+  margin: 18px 0 7px;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--brown);
+  outline-color: var(--gold);
+}
+
+.total-box {
+  margin: 22px 0;
+  padding: 18px;
+  background: var(--cream);
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.total-box strong {
+  font-size: 18px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.notice {
+  font-size: 10px;
+  margin-top: 15px;
+}
+
+/* LOKASI DAN KONTAK */
+
+.visit-layout,
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5%;
+  align-items: center;
+  padding: 20px 8% 75px;
+}
+
+.visit-layout img {
+  height: 400px;
+}
+
+.info-card {
+  background: var(--cream);
+  padding: 30px;
+}
+
+.info-card h2,
+.contact-info h2 {
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+
+.info-card p,
+.contact-info > p {
+  font-size: 13px;
+  margin: 10px 0;
+}
+
+.info-card address {
+  font-style: normal;
+  font-size: 13px;
+  margin: 20px 0;
+}
+
+.info-card .hours {
+  border-top: 1px solid var(--line);
+  margin: 20px 0;
+  padding-top: 10px;
+}
+
+.hours div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 11px;
+}
+
+.contact-info {
+  padding: 15px 0;
+}
+
+.contact-line {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-line small {
+  display: block;
+  color: var(--gold);
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.contact-line strong {
+  display: block;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 38px 8%;
+  background: #2C2019;
+  color: var(--cream);
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+footer p {
+  color: #C9B7A4;
+  font-size: 12px;
+}
+
+footer .brand-name {
+  color: var(--cream);
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-links button {
+  background: transparent;
+  color: var(--cream);
+  font-size: 11px;
+}
+
+.footer-bottom {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #554238;
+  font-size: 10px;
+  color: #C9B7A4;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 850px) {
+  header {
+    padding: 13px 5%;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 77px;
+    left: 0;
+    right: 0;
+    padding: 20px 6%;
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  nav button {
+    text-align: left;
+    font-size: 13px;
+  }
+
+  .hero {
+    padding: 45px 6%;
+    gap: 4%;
+  }
+
+  .hero-image img {
+    height: 380px;
+  }
+
+  .section {
+    padding: 60px 6%;
+  }
+
+  .product-grid {
+    gap: 13px;
+  }
+
+  .product-card img {
+    height: 190px;
+  }
+
+  .product-info {
+    padding: 14px;
+  }
+
+  .product-info h3 {
+    font-size: 21px;
+  }
+
+  .detail-layout {
+    padding: 35px 6% 60px;
+  }
+
+  .visit-layout,
+  .contact-layout {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+}
+
+@media(max-width: 580px) {
+  .brand-name {
+    font-size: 10px;
+  }
+
+  .brand-name small {
+    font-size: 8px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 40px 6%;
+  }
+
+  .hero-copy {
+    padding-bottom: 25px;
+  }
+
+  .hero-image img {
+    height: 330px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-card img {
+    height: 150px;
+  }
+
+  .product-info h3 {
+    font-size: 19px;
+  }
+
+  .product-info p {
+    font-size: 11px;
+  }
+
+  .product-bottom {
+    flex-wrap: wrap;
+  }
+
+  .catalog-tools {
+    flex-wrap: wrap;
+  }
+
+  .catalog-tools input,
+  .catalog-tools select {
+    width: 100%;
+  }
+
+  .section-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .detail-layout,
+  .visit-layout,
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-layout > img {
+    height: 330px;
+  }
+
+  .journal-item {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .journal-item img {
+    height: 220px;
+  }
+
+  .visit-layout img {
+    height: 280px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+  }
+
+  .footer-links {
+    gap: 15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="#home" class="brand" onclick="showPage('home')">
+    <span class="brand-icon">M</span>
+    <span class="brand-name">
+      MAISON
+      <small>DE PÂTISSERIE</small>
+    </span>
+  </a>
+
+  <button class="menu-toggle" onclick="toggleMenu()" aria-label="Buka menu">☰</button>
+
+  <nav id="navigation">
+    <button onclick="showPage('home')">Beranda</button>
+    <button onclick="showPage('catalog')">Koleksi Pastry</button>
+    <button onclick="showPage('journal')">Pastry Journal</button>
+    <button onclick="showPage('visit')">Lokasi Toko</button>
+    <button onclick="showPage('contact')">Kontak</button>
+    <button class="button button-dark" onclick="showPage('order')">Pesan Sekarang ↗</button>
+  </nav>
+</header>
+
+<!-- ================= BERANDA ================= -->
+
+<main>
+
+<section class="page active" id="home">
+
+  <div class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">SENI RASA • TRADISI • KEANGGUNAN</p>
+
+      <h1>
+        Keindahan kecil,<br>
+        <span class="italic">rasa yang abadi.</span>
+      </h1>
+
+      <p class="description">
+        Temukan dunia pastry dari berbagai belahan dunia.
+        Setiap lapisan menyimpan cerita, setiap gigitan
+        menghadirkan pengalaman yang istimewa.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="button button-dark" onclick="showPage('catalog')">
+          JELAJAHI KOLEKSI ↗
+        </button>
+
+        <button class="button button-outline" onclick="showPage('journal')">
+          BACA CERITA
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img
+        src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1000&q=85"
+        alt="Croissant pastry berwarna keemasan"
+      >
+
+      <div class="image-label">
+        <small>OUR SIGNATURE PASTRY</small>
+        <strong>Le Croissant</strong>
+      </div>
+    </div>
+  </div>
+
+  <section class="section section-center">
+    <p class="eyebrow">SELAMAT DATANG DI MAISON</p>
+
+    <h2>
+      Lebih dari sekadar kue.<br>
+      <span class="italic">Sebuah perjalanan rasa.</span>
+    </h2>
+
+    <p class="intro-text">
+      Dari bakery klasik Prancis hingga dessert khas Italia,
+      kami mengajakmu mengenal sejarah, bahan, dan keunikan
+      pastry yang telah dicintai dari generasi ke generasi.
+    </p>
+  </section>
+
+  <section class="section catalog-section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">THE COLLECTION</p>
+        <h2>Favorit <span class="italic">pilihan kami</span></h2>
+      </div>
+
+      <button class="text-button" onclick="showPage('catalog')">
+        LIHAT SEMUA ↗
+      </button>
+    </div>
+
+    <div class="product-grid" id="featuredProducts"></div>
+  </section>
+
+  <section class="section section-center">
+    <p class="eyebrow">A LITTLE NOTE</p>
+
+    <h2>
+      “Hal sederhana menjadi istimewa<br>
+      <span class="italic">ketika dibuat sepenuh hati.”</span>
+    </h2>
+
+    <p class="intro-text">
+      Maison de Pâtisserie — A Little Taste of Elegance.
+    </p>
+
+    <br>
+
+    <button class="button button-dark" onclick="showPage('visit')">
+      TEMUKAN TOKO KAMI ↗
+    </button>
+  </section>
+
+</section>
+
+<!-- ================= KATALOG ================= -->
+
+<section class="page" id="catalog">
+
+  <div class="section section-center">
+    <p class="eyebrow">DIBUAT UNTUK DINIKMATI</p>
+    <h1>Koleksi <span class="italic">Pastry</span></h1>
+
+    <p class="intro-text">
+      Temukan pastry favoritmu dan kenali cerita di baliknya.
+    </p>
+  </div>
+
+  <section class="section catalog-section">
+
+    <div class="catalog-tools">
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="Cari nama pastry..."
+        oninput="renderCatalog()"
+      >
+
+      <select id="countryFilter" onchange="renderCatalog()">
+        <option value="">Semua negara</option>
+        <option value="Prancis">Prancis</option>
+        <option value="Italia">Italia</option>
+        <option value="Portugal">Portugal</option>
+        <option value="Austria">Austria</option>
+      </select>
+    </div>
+
+    <div class="product-grid" id="allProducts"></div>
+
+    <p id="emptyMessage" class="no-results" hidden>
+      Pastry tidak ditemukan. Coba pencarian lain, ya.
+    </p>
+
+  </section>
+</section>
+
+<!-- ================= DETAIL PASTRY ================= -->
+
+<section class="page" id="detail">
+
+  <button class="back-button" onclick="showPage('catalog')">
+    ← KEMBALI KE KOLEKSI
+  </button>
+
+  <div class="detail-layout">
+
+    <img id="detailImage" src="" alt="Foto pastry">
+
+    <div class="detail-copy">
+
+      <p class="eyebrow" id="detailCountry"></p>
+
+      <h1 id="detailName"></h1>
+
+      <p id="detailDescription"></p>
+
+      <div class="detail-price" id="detailPrice"></div>
+
+      <button
+        class="button button-dark full-width"
+        id="detailOrderButton"
+        onclick="orderCurrentPastry()"
+      >
+        PESAN PASTRY INI ↗
+      </button>
+
+      <div class="fact-box">
+        <h3>Asal-usul</h3>
+        <p id="detailHistory"></p>
+      </div>
+
+      <div class="fact-box">
+        <h3>Bahan utama</h3>
+        <p id="detailIngredients"></p>
+      </div>
+
+      <div class="fact-box">
+        <h3>Fun Fact ✦</h3>
+        <p id="detailFact"></p>
+      </div>
+
+      <p class="notice">
+        Informasi sejarah merupakan pengantar kuliner.
+        Beberapa pastry memiliki lebih dari satu versi sejarah.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= PASTRY JOURNAL ================= -->
+
+<section class="page" id="journal">
+
+  <div class="section section-center">
+    <p class="eyebrow">CERITA DI BALIK SETIAP LAPISAN</p>
+    <h1>Pastry <span class="italic">Journal</span></h1>
+
+    <p class="intro-text">
+      Menjelajahi budaya, sejarah, dan fakta menarik dari
+      berbagai pastry di seluruh dunia.
+    </p>
+  </div>
+
+  <div class="journal-list" id="journalList"></div>
+
+</section>
+
+<!-- ================= PEMESANAN ================= -->
+
+<section class="page" id="order">
+
+  <div class="section section-center">
+    <p class="eyebrow">A LITTLE BOX OF HAPPINESS</p>
+    <h1>Pesan <span class="italic">Favoritmu</span></h1>
+
+    <p class="intro-text">
+      Isi formulir berikut untuk menyiapkan pesananmu.
+    </p>
+  </div>
+
+  <form class="form-container" id="orderForm">
+
+    <p class="eyebrow">01 — DETAIL PESANAN</p>
+
+    <label for="orderProduct">Pilih pastry</label>
+
+    <select id="orderProduct" required onchange="calculateTotal()">
+      <option value="">Pilih menu...</option>
+    </select>
+
+    <label for="quantity">Jumlah pesanan</label>
+
+    <input
+      id="quantity"
+      type="number"
+      min="1"
+      max="50"
+      value="1"
+      required
+      oninput="calculateTotal()"
+    >
+
+    <div class="total-box">
+      <span>Estimasi total</span>
+      <strong id="totalPrice">Rp0</strong>
+    </div>
+
+    <br>
+
+    <p class="eyebrow">02 — INFORMASI PELANGGAN</p>
+
+    <label for="customerName">Nama lengkap</label>
+    <input id="customerName" type="text" placeholder="Nama kamu" required>
+
+    <label for="customerPhone">Nomor WhatsApp kamu</label>
+    <input id="customerPhone" type="tel" placeholder="08xxxxxxxxxx" required>
+
+    <label for="orderMethod">Metode penerimaan</label>
+
+    <select id="orderMethod" required>
+      <option value="">Pilih metode...</option>
+      <option>Ambil langsung di toko</option>
+      <option>Pengiriman / kurir</option>
+    </select>
+
+    <label for="orderDate">Tanggal pesanan</label>
+    <input id="orderDate" type="date" required>
+
+    <label for="orderNotes">Catatan tambahan</label>
+    <textarea
+      id="orderNotes"
+      rows="4"
+      placeholder="Contoh: untuk hadiah ulang tahun..."
+    ></textarea>
+
+    <br><br>
+
+    <button class="button button-dark full-width" type="submit">
+      LANJUTKAN VIA WHATSAPP ↗
+    </button>
+
+    <p class="notice">
+      Harga merupakan estimasi. Konfirmasi stok, ongkos kirim,
+      dan total akhir melalui WhatsApp sebelum membayar.
+    </p>
+
+  </form>
+</section>
+
+<!-- ================= LOKASI TOKO ================= -->
+
+<section class="page" id="visit">
+
+  <div class="section section-center">
+    <p class="eyebrow">COME SAY BONJOUR</p>
+    <h1>Kunjungi <span class="italic">Maison</span></h1>
+
+    <p class="intro-text">
+      Nikmati pengalaman pastry langsung dari toko kami.
+    </p>
+  </div>
+
+  <div class="visit-layout">
+
+    <img
+      src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=85"
+      alt="Interior kafe dengan suasana hangat"
+    >
+
+    <div class="info-card">
+
+      <p class="eyebrow">OUR BOUTIQUE</p>
+
+      <h2>Maison de Pâtisserie</h2>
